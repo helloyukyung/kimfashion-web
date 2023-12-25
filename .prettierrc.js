@@ -5,5 +5,6 @@ module.exports = {
   printWidth: 120,
   bracketSpacing: false,
   tabWidth: 2,
-  parser: 'typescript'
+  parser: 'typescript',
+  plugins: ['prettier-plugin-tailwindcss']
 }
