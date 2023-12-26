@@ -1,7 +1,12 @@
 import Image from 'next/image'
 
-const Logo = () => {
-  return <Image src={'/assets/logo.webp'} width={140} height={140} alt="kimfashion_logo" />
+interface LogoProps {
+  className?: string
+  width: number
+  height: number
+}
+const Logo = ({...props}: LogoProps) => {
+  return <Image src={'/assets/logo.webp'} {...props} alt="kimfashion_logo" />
 }
 
 export default Logo
