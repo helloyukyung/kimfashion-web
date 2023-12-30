@@ -24,25 +24,22 @@ const Header = () => {
       <Link href="/" onClick={handleCloseMenu}>
         <Logo width={140} height={140} className="h-[50px] w-[50px] laptop:h-[140px] laptop:w-[140px]" />
       </Link>
-      <ul
+      <div
         onClick={handleCloseMenu}
         className={` ${
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
-        } fixed top-[50px] w-full flex-col items-start bg-black transition-all laptop:visible laptop:static laptop:flex laptop:flex-1 laptop:translate-x-0 laptop:opacity-100`}
+        } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] transition-all laptop:visible laptop:static laptop:flex laptop:flex-1 laptop:translate-x-0 laptop:opacity-100`}
       >
-        <li className="py-[8px] pl-[20px]">
-          <Link href="/news">NEWS</Link>
-        </li>
-        <li className="py-[8px] pl-[20px]">
-          <Link href="/top5">TOP5</Link>
-        </li>
-        <li className="py-[8px] pl-[20px]">
-          <Link href="/">OOTD</Link>
-        </li>
-        <li className="py-[8px] pl-[20px]">
-          <Link href="/">CELEBRITY</Link>
-        </li>
-      </ul>
+        <Link href="/news" className="block w-full py-[8px] pl-[20px]">
+          NEWS
+        </Link>
+        <Link href="/top5" className="block w-full py-[8px] pl-[20px]">
+          TOP5
+        </Link>
+        <Link href="/ootd" className="block w-full py-[8px] pl-[20px]">
+          OOTD
+        </Link>
+      </div>
       <ul className="hidden text-[12px] laptop:block">
         <li className="flex items-center gap-[8px] pb-[4px]">
           <MdOutlineEmail size="14px" />
