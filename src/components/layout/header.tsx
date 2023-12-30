@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import {useCallback, useState} from 'react'
 import {FaInstagram} from 'react-icons/fa'
 import {MdClose, MdOutlineEmail, MdOutlineMenu} from 'react-icons/md'
@@ -11,23 +12,38 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev)
   }, [])
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
-    <div className="fixed laptop:sticky min-w-full flex min-h-[50px] laptop:min-h-[100dvh] laptop:min-w-[220px] flex-col items-center justify-center bg-black laptop:px-[12px] laptop:py-[20px] text-white">
-      <button onClick={handleClickMenuOpen} className="absolute top-[9px] left-[10px] laptop:hidden">
+    <div className="fixed flex min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:sticky laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
+      <button onClick={handleClickMenuOpen} className="absolute left-[10px] top-[9px] laptop:hidden">
         {isMenuOpen ? <MdClose size="30px" /> : <MdOutlineMenu size="30px" />}
       </button>
-      <Logo width={140} height={140} className="w-[50px] h-[50px] laptop:w-[140px] laptop:h-[140px]" />
+      <Link href="/" onClick={handleCloseMenu}>
+        <Logo width={140} height={140} className="h-[50px] w-[50px] laptop:h-[140px] laptop:w-[140px]" />
+      </Link>
       <ul
+        onClick={handleCloseMenu}
         className={` ${
-          isMenuOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-full'
-        } w-full transition-all duration-500 laptop:flex-1 flex-col items-start laptop:flex fixed top-[50px] bg-black laptop:static laptop:opacity-100 laptop:visible laptop:translate-x-0`}
+          isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
+        } fixed top-[50px] w-full flex-col items-start bg-black transition-all laptop:visible laptop:static laptop:flex laptop:flex-1 laptop:translate-x-0 laptop:opacity-100`}
       >
-        <li className="pl-[20px] py-[8px]">NEWS</li>
-        <li className="pl-[20px] py-[8px]">TOP5</li>
-        <li className="pl-[20px] py-[8px]">OOTD</li>
-        <li className="pl-[20px] py-[8px]">CELEBRITY</li>
+        <li className="py-[8px] pl-[20px]">
+          <Link href="/news">NEWS</Link>
+        </li>
+        <li className="py-[8px] pl-[20px]">
+          <Link href="/top5">TOP5</Link>
+        </li>
+        <li className="py-[8px] pl-[20px]">
+          <Link href="/">OOTD</Link>
+        </li>
+        <li className="py-[8px] pl-[20px]">
+          <Link href="/">CELEBRITY</Link>
+        </li>
       </ul>
-      <ul className="text-[12px] hidden laptop:block">
+      <ul className="hidden text-[12px] laptop:block">
         <li className="flex items-center gap-[8px] pb-[4px]">
           <MdOutlineEmail size="14px" />
           kimfashion@gmail.com
