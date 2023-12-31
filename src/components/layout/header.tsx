@@ -17,26 +17,26 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed flex min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:sticky laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
+    <div className="fixed flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
       <button onClick={handleClickMenuOpen} className="absolute left-[10px] top-[9px] laptop:hidden">
         {isMenuOpen ? <MdClose size="30px" /> : <MdOutlineMenu size="30px" />}
       </button>
-      <Link href="/" onClick={handleCloseMenu}>
-        <Logo width={140} height={140} className="h-[50px] w-[50px] laptop:h-[140px] laptop:w-[140px]" />
+      <Link href="/" onClick={handleCloseMenu} className="w-[60px] laptop:my-[40px] laptop:w-[140px]">
+        <Logo width={150} height={150} />
       </Link>
       <div
         onClick={handleCloseMenu}
-        className={` ${
+        className={`${
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
-        } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] transition-all laptop:visible laptop:static laptop:flex laptop:flex-1 laptop:translate-x-0 laptop:opacity-100`}
+        } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
       >
-        <Link href="/news" className="block w-full py-[8px] pl-[20px]">
+        <Link href="/news" className="block w-full py-[8px]">
           NEWS
         </Link>
-        <Link href="/top5" className="block w-full py-[8px] pl-[20px]">
+        <Link href="/top5" className="block w-full py-[8px]">
           TOP5
         </Link>
-        <Link href="/ootd" className="block w-full py-[8px] pl-[20px]">
+        <Link href="/ootd" className="block w-full py-[8px]">
           OOTD
         </Link>
       </div>

@@ -1,9 +1,7 @@
 import Header from '@/components/layout/header'
 import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
+import Head from 'next/head'
 import './globals.css'
-
-const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,10 +11,17 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
+      <Head>
+        <link
+          rel="stylesheet"
+          as="style"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+        />
+      </Head>
+      <body>
         <div className="flex w-full">
           <Header />
-          <div className="flex w-full flex-col items-center pt-[80px]">{children}</div>
+          <div className="flex w-full flex-col items-center pt-[48px]">{children}</div>
         </div>
       </body>
     </html>

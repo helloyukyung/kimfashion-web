@@ -6,7 +6,7 @@ interface LogoProps {
   height: number
 }
 const Logo = ({...props}: LogoProps) => {
-  return <Image src={'/assets/logo.webp'} {...props} alt="kimfashion_logo" />
+  return <Image src={'/assets/logo.png'} {...props} alt="kimfashion_logo" />
 }
 
 export default Logo
