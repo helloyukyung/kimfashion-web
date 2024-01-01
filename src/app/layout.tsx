@@ -1,7 +1,9 @@
+import Footer from '@/components/layout/footer'
 import Header from '@/components/layout/header'
+import '@/styles/globals.css'
+import '@/styles/reset.css'
 import type {Metadata} from 'next'
 import Head from 'next/head'
-import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,9 +21,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </Head>
       <body>
-        <div className="flex w-full">
+        <div className="flex w-full flex-col">
           <Header />
-          <div className="flex w-full flex-col items-center pt-[48px] laptop:ml-[220px]">{children}</div>
+          <div className="flex flex-col items-center pt-[48px] laptop:ml-[220px]">{children}</div>
+          <Footer />
         </div>
       </body>
     </html>

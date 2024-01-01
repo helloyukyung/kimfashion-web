@@ -5,7 +5,7 @@ interface PostListProps {
 }
 function PostList({title}: PostListProps) {
   return (
-    <div className="flex max-w-[480px] flex-col justify-center ">
+    <div className="flex w-full max-w-[480px] flex-col justify-center">
       <h2 className="mb-[12px] text-[32px] font-bold uppercase">{title}</h2>
       {['', ''].map((item, index) => (
         <PostItem key={index} />
