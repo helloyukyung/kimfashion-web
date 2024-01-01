@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import {useCallback, useState} from 'react'
 import {FaInstagram} from 'react-icons/fa'

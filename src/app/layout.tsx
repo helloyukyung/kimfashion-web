@@ -23,7 +23,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body>
         <div className="flex w-full flex-col">
           <Header />
-          <div className="flex flex-col items-center pt-[48px] laptop:ml-[220px]">{children}</div>
+          <div className="flex flex-col items-center pt-[60px] laptop:ml-[220px]">{children}</div>
           <Footer />
         </div>
       </body>

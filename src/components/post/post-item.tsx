@@ -23,7 +23,9 @@ function PostItem() {
         <h3>
           <b className="mr-[4px]">마리끌레르</b>루이비통과 최소라가 함께한 마리끌레르 1월호 커버 공개
         </h3>
-        <span className="text-[#bb3a48]">#Fashion</span> <span className="text-[#bb3a48]">#Trand</span>
+        <div className="pt-[4px] text-[color:var(--hashtag)]">
+          <span>#Fashion</span> <span>#Trand</span>
+        </div>
         <hr className="my-[8px]" />
       </div>
     </div>
