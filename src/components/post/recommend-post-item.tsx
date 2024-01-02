@@ -10,8 +10,8 @@ function RecommendPostItem() {
         src="/assets/temp/test_2.jpeg"
         alt="temp"
       />
-      <p className="pb-[2px] pt-[4px] text-[14px] font-bold">제니가 말아주는 공항 스타일링</p>
-      <p className="text-[11px] text-[gray]">editor MarieClaireKorea | 2023.12.26</p>
+      <p className="pb-[2px] pt-[4px] font-bold">제니가 말아주는 공항 스타일링</p>
+      <p className="text-[1rem] text-[gray]">editor MarieClaireKorea | 2023.12.26</p>
     </div>
   )
 }

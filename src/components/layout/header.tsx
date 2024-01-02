@@ -41,7 +41,7 @@ const Header = () => {
           OOTD
         </Link>
       </div>
-      <ul className="hidden text-[12px] laptop:block">
+      <ul className="hidden text-[1.2rem] laptop:block">
         <li className="flex items-center gap-[8px] pb-[4px]">
           <MdOutlineEmail size="14px" />
           kimfashion@gmail.com

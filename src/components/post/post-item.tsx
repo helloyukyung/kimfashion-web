@@ -3,7 +3,7 @@ import Image from 'next/image'
 function PostItem() {
   return (
     <div className="w-full">
-      <div className="flex items-center gap-[10px] pb-[12px] pl-[4px] pt-[8px] text-[14px]">
+      <div className="flex items-center gap-[10px] pb-[12px] pl-[4px] pt-[8px]">
         <Image
           priority
           className="rounded-[100px]"
@@ -19,7 +19,7 @@ function PostItem() {
         </div>
       </div>
       <Image className="w-full rounded" width={480} height={480} src="/assets/temp/test_1.jpeg" alt="temp" />
-      <div className="py-[8px] text-[14px]">
+      <div className="py-[8px]">
         <h3>
           <b className="mr-[4px]">마리끌레르</b>루이비통과 최소라가 함께한 마리끌레르 1월호 커버 공개
         </h3>
