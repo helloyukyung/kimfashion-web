@@ -1,11 +1,10 @@
-import PostList from '@/components/post/post-list'
-import RecommendPostList from '@/components/post/recommend-post-list'
+import OotdList from '@/components/ootd/ootd-list'
 
 export default async function Page() {
   return (
-    <main className="flex w-full flex-col-reverse items-center justify-center gap-[20px] px-[var(--side-padding)] laptop:flex-row laptop:items-start laptop:gap-[64px]">
-      <PostList title="ootd" />
-      <RecommendPostList />
+    <main className="flex w-full max-w-[900px] flex-col justify-center px-[var(--side-padding)]">
+      <h2 className="mb-[12px] text-[3.2rem] font-bold uppercase">ootd</h2>
+      <OotdList />
     </main>
   )
 }
