@@ -20,6 +20,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
+        <script src="https://platform.instagram.com/en_US/embeds.js" async />
       </Head>
       <body>
         <div className="flex w-full flex-col">
