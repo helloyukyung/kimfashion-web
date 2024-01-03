@@ -2,10 +2,9 @@
 
 import Link from 'next/link'
 import {useCallback, useState} from 'react'
-import {FaInstagram} from 'react-icons/fa'
-import {MdClose, MdOutlineEmail, MdOutlineMenu} from 'react-icons/md'
+import {CiInstagram, CiMail} from 'react-icons/ci'
+import {MdClose, MdOutlineMenu} from 'react-icons/md'
 import Logo from '../Logo'
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
@@ -41,16 +40,14 @@ const Header = () => {
           OOTD
         </Link>
       </div>
-      <ul className="hidden text-[1.2rem] laptop:block">
-        <li className="flex items-center gap-[8px] pb-[4px]">
-          <MdOutlineEmail size="14px" />
-          kimfashion@gmail.com
-        </li>
-        <li className="flex items-center gap-[8px]">
-          <FaInstagram size="14px" />
-          kimfashion_news
-        </li>
-      </ul>
+      <address className="hidden gap-[10px] text-[1.2rem] laptop:flex">
+        <a href="mailto:official.kimfashion@gmail.com">
+          <CiMail size="24px" />
+        </a>
+        <a target="_blank" href="https://www.instagram.com/kimfashion_news">
+          <CiInstagram size="24px" />
+        </a>
+      </address>
     </div>
   )
 }
