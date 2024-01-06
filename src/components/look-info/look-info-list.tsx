@@ -1,13 +1,13 @@
-import OotdItem from './ootd-item'
+import LookInfoItem from './look-info-item'
 
-function OotdList() {
+function LookInfoList() {
   return (
     <div className="grid grid-cols-3 gap-[6px]">
       {['', '', '', ''].map((item, index) => (
-        <OotdItem key={index} />
+        <LookInfoItem key={index} />
       ))}
     </div>
   )
 }
 
-export default OotdList
+export default LookInfoList

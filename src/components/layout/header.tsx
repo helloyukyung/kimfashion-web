@@ -1,16 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import {useCallback, useState} from 'react'
+import {useState} from 'react'
 import {CiInstagram, CiMail} from 'react-icons/ci'
 import {MdClose, MdOutlineMenu} from 'react-icons/md'
 import Logo from '../Logo'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
-  const handleClickMenuOpen = useCallback(() => {
+  const handleClickMenuOpen = () => {
     setIsMenuOpen((prev) => !prev)
-  }, [])
+    console.log('hi')
+  }
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false)
@@ -36,8 +37,8 @@ const Header = () => {
         <Link href="/top5" className="block w-full py-[8px]">
           TOP5
         </Link>
-        <Link href="/ootd" className="block w-full py-[8px]">
-          OOTD
+        <Link href="/look-info" className="block w-full py-[8px]">
+          LOOK INFO
         </Link>
       </div>
       <address className="hidden gap-[10px] text-[1.2rem] laptop:flex">
