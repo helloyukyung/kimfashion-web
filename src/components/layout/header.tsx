@@ -18,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
+    <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
       <button onClick={handleClickMenuOpen} className="absolute left-[10px] top-[9px] laptop:hidden">
         {isMenuOpen ? <MdClose size="30px" /> : <MdOutlineMenu size="30px" />}
       </button>
