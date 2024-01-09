@@ -10,7 +10,6 @@ const Header = () => {
 
   const handleClickMenuOpen = () => {
     setIsMenuOpen((prev) => !prev)
-    console.log('hi')
   }
 
   const handleCloseMenu = () => {
@@ -37,8 +36,8 @@ const Header = () => {
         <Link href="/news" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
           NEWS
         </Link>
-        <Link href="/top5" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
-          TOP5
+        <Link href="/top-content" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
+          TOP CONTENT
         </Link>
         <Link href="/look-info" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
           LOOK INFO
