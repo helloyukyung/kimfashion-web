@@ -31,10 +31,10 @@ function PostItem({post}: PostItemProps) {
         alt="representative-image"
       />
       <div className="py-[8px]">
-        <h3>
+        <h2>
           <b className="mr-[4px]">{post.editor}</b>
           {post.title}
-        </h3>
+        </h2>
         <div className="pt-[8px] text-[color:var(--hashtag)]">
           {post.hashtags.map((hashtag) => (
             <span className="pr-[4px]" key={hashtag}>
