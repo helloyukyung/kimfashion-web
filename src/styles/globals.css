@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  /* width */
+  --max-layout-width: 820px;
   /* padding */
   --side-padding: 10px;
   /* color */

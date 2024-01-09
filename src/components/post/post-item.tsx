@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Hashtag from '../common/hashtag'
 import {Post} from './post-list'
 
 interface PostItemProps {
@@ -35,11 +36,9 @@ function PostItem({post}: PostItemProps) {
           <b className="mr-[4px]">{post.editor}</b>
           {post.title}
         </h2>
-        <div className="pt-[8px] text-[color:var(--hashtag)]">
-          {post.hashtags.map((hashtag) => (
-            <span className="pr-[4px]" key={hashtag}>
-              #{hashtag}
-            </span>
+        <div className="pt-[8px]">
+          {post.hashtags.map((hashtag, index) => (
+            <Hashtag text={hashtag} key={index} />
           ))}
         </div>
         <hr className="my-[8px]" />
