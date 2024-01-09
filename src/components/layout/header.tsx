@@ -31,21 +31,21 @@ const Header = () => {
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
         } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
       >
-        <Link href="/news" className="block w-full py-[8px]">
+        <Link href="/news" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
           NEWS
         </Link>
-        <Link href="/top5" className="block w-full py-[8px]">
+        <Link href="/top5" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
           TOP5
         </Link>
-        <Link href="/look-info" className="block w-full py-[8px]">
+        <Link href="/look-info" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
           LOOK INFO
         </Link>
       </div>
       <address className="hidden gap-[10px] text-[1.2rem] laptop:flex">
-        <a href="mailto:official.kimfashion@gmail.com">
+        <a href="mailto:official.kimfashion@gmail.com" className="hover:text-[var(--hashtag)]">
           <CiMail size="24px" />
         </a>
-        <a target="_blank" href="https://www.instagram.com/kimfashion_news">
+        <a target="_blank" href="https://www.instagram.com/kimfashion_news" className="hover:text-[var(--hashtag)]">
           <CiInstagram size="24px" />
         </a>
       </address>
