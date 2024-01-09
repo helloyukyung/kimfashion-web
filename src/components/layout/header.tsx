@@ -4,7 +4,8 @@ import Link from 'next/link'
 import {useState} from 'react'
 import {CiInstagram, CiMail} from 'react-icons/ci'
 import {MdClose, MdOutlineMenu} from 'react-icons/md'
-import Logo from '../Logo'
+import Logo from '../common/logo'
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
