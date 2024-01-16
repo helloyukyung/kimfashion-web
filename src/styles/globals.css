@@ -36,10 +36,6 @@ body {
   font-size: 1.4rem;
 }
 
-h1 {
-  font-family: var(--font-pair-display);
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

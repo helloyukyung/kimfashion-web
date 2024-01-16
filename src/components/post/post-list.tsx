@@ -1,8 +1,6 @@
 import PostItem from './post-item'
 
-interface PostListProps {
-  title: string
-}
+interface PostListProps {}
 
 const temp: Post[] = [
   {
@@ -25,14 +23,14 @@ export interface Post {
   editorImage: string
   createdAt: string
 }
-function PostList({title}: PostListProps) {
+
+function PostList({}: PostListProps) {
   return (
-    <div className="flex w-full max-w-[480px] flex-col justify-center">
-      <h1 className="mb-[12px] text-[3.2rem] font-bold uppercase">{title}</h1>
+    <>
       {temp.map((item, index) => (
         <PostItem post={item} key={index} />
       ))}
-    </div>
+    </>
   )
 }
 

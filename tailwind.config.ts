@@ -7,6 +7,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    fontFamily: {
+      fontPairDisplay: ['var(--font-pair-display)'] // 다음과 같이 배열 안에 string으로 작성합니다.
+    },
     screens: {
       tablet: '640px',
       laptop: '1024px',
