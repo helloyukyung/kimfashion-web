@@ -7,18 +7,17 @@ export default async function Page() {
   return (
     <main className="flex w-full max-w-[var(--max-layout-width)] flex-col justify-center px-[var(--side-padding)]">
       <h1 className="mb-[12px] text-[3.2rem] font-bold uppercase">
-        top content
+        TOP CONTENT
       </h1>
       <Subtitle>
-        오래 입을 수 있으면서, 하입의 경계에 있는 종류 별 탑 제품들을
-        소개합니다.
+        넘쳐나는 컨텐츠 속에서 양질의 패션정보만 엄선한 추천 컨텐츠
       </Subtitle>
       <div className="grid gap-[10px] tablet:grid-cols-2">
         {["", "", "", ""].map((item, index) => (
           <Link href="/top-content/id" className="flex flex-col" key={index}>
-            <div className="relative overflow-hidden pb-[180px]">
+            <div className="relative overflow-hidden pb-[200px]">
               <Image
-                className="absolute h-[180px] w-full rounded object-cover"
+                className="absolute h-[200px] w-full rounded object-cover"
                 width={500}
                 height={500}
                 src="/assets/temp/forher.jpeg"
