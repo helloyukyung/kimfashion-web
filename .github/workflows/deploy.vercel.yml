@@ -7,20 +7,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: 1. mustache 설치
-        run: apk add ruby && gem install mustache
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-      - name: 2. output 생성
+      - name: Install Ruby and Mustache
+        run: |
+          sudo apt-get install -y ruby-full
+          gem install mustache
+
+      - name: Generate Output
         run: sh ./build.sh
 
-      - name: 3. kimfashion public repo에 push
+      - name: Push to kimfashion public repo
         id: push_directory
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@v2
         env:
           API_TOKEN_GITHUB: ${{ secrets.OFFICIAL_ACCOUNT_GH_TOKEN }}
         with:
