@@ -17,6 +17,7 @@ const Header = () => {
     setIsMenuOpen(false)
   }
 
+  console.log('test')
   return (
     <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
       <button
