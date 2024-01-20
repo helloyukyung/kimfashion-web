@@ -26,7 +26,7 @@ jobs:
 
       - name: Push to kimfashion public repo
         id: push_directory
-        uses: cpina/github-action-push-to-another-repository@v2
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.OFFICIAL_ACCOUNT_GH_TOKEN }}
         with:
