@@ -1,4 +1,4 @@
-name: vercel 배포 (hellow public repo에 자동 push)
+name: vercel 배포 (kimfashion public repo에 자동 push)
 
 on:
   push:
@@ -7,26 +7,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: pandoc/latex
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          node-version: 16
+      - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
+      - name: 1. mustache 설치
+        run: apk add ruby && gem install mustache
 
-      - name: Install Ruby and Mustache
-        run: |
-          sudo apt-get install -y ruby-full
-          gem install mustache
-
-      - name: Generate Output
+      - name: 2. output 생성
         run: sh ./build.sh
 
-      - name: Push to kimfashion public repo
+      - name: 3. kimfashion-web repo에 push
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
         env:
