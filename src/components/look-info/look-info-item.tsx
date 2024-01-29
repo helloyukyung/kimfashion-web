@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FaBookmark, FaRegEye } from "react-icons/fa6";
+import Image from 'next/image'
+import Link from 'next/link'
+import {FaBookmark, FaRegEye} from 'react-icons/fa6'
 function LookInfoItem() {
   return (
     <Link
-      href={"/look-info/id"}
+      href={'/look-info/id'}
       className=" hover::after:bg-opacity-[0.28] hover::after:bg-gray-500 hover::after:absolute hover::after:inset-0 hover::after:rounded group relative z-0"
     >
       <div className="laptop:min-w-[200px]">
@@ -25,7 +25,7 @@ function LookInfoItem() {
         </div>
       </div>
     </Link>
-  );
+  )
 }
 
-export default LookInfoItem;
+export default LookInfoItem

@@ -6,7 +6,6 @@ export default function Page() {
     <main className="mx-auto w-full max-w-[780px] p-[10px]">
       <h1 className="mb-[12px] text-[3.2rem] font-bold uppercase">기본 후드티 추천</h1>
       <WriterInfo profileImage="/assets/temp/marieclaire.png" nickname="김패션" createdAt="2022.02.02" />
-      {/* 전체 설명 */}
       <p className="pb-[20px] text-[1.4rem]">
         스웨덴을 기반으로 다양한 하위문화를 전통적인 패브릭을 통해 풀어 나가는 브랜드 아워레가시. 국내에서 큰 사랑을
         받는 브랜드인 만큼 코트 또한 유명하다. 넉넉한 사이즈의 제품이지만 테일러링이 들어간 각진 어깨와 허리 라인의
@@ -16,7 +15,7 @@ export default function Page() {
         사랑을 받는 브랜드인 만큼 코트 또한 유명하다. 넉넉한 사이즈의 제품이지만 테일러링이 들어간 각진 어깨와 허리
         라인의 실루엣이 특징. 모헤어 울의 헤어리한 텍스쳐와 만나 섹시한 무드를 자아내는 확실한 차별점을 가지고있다.
       </p>
-      {['', ''].map((item, index) => (
+      {['', '', ''].map((item, index) => (
         <div className="my-[20px]" key={index}>
           <h3 className="pb-[10px] text-[1.8rem] font-bold">{index + 1}. For Her·NAPPING CROP HOODIE ZIP UP</h3>
           <div className="flex flex-col gap-[10px] tablet:h-[320px] tablet:flex-row">
