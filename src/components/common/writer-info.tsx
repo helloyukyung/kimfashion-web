@@ -1,12 +1,13 @@
-import Image from "next/image";
+import dayjs from 'dayjs'
+import Image from 'next/image'
 
 interface WriterInfoProps {
-  profileImage: string;
-  nickname: string;
-  createdAt: string;
+  profileImage: string
+  nickname: string
+  createdAt: string
 }
 
-function WriterInfo({ profileImage, nickname, createdAt }: WriterInfoProps) {
+function WriterInfo({profileImage, nickname, createdAt}: WriterInfoProps) {
   return (
     <div className="flex items-center gap-[10px] pb-[12px] pl-[4px] pt-[8px]">
       <Image
@@ -20,19 +21,10 @@ function WriterInfo({ profileImage, nickname, createdAt }: WriterInfoProps) {
       <div>
         <span>{nickname}</span>
         <span className="px-[4px] text-[#737373]">·</span>
-        <span className="text-[#737373]">{createdAt}</span>
+        <span className="text-[#737373]">{dayjs(createdAt).format('YYYY.MM.DD')}</span>
       </div>
     </div>
-  );
+  )
 }
 
-export default WriterInfo;
-
-interface lookInfoList {
-  id: string;
-  image: string;
-  viewed: number;
-  liked: number;
-  writer: { profileImage: string; nickname: string };
-}
-[];
+export default WriterInfo
