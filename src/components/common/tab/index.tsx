@@ -11,7 +11,7 @@ interface TabProps {
 function Tab({tabs}: TabProps) {
   const searchParams = useSearchParams()
   const pathname = usePathname()
-  const currentTab = searchParams.get('tab') || tabs[0].title
+  const currentTab = searchParams?.get('tab') || tabs[0].title
 
   return (
     <div>

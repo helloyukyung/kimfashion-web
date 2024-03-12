@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     children: '버튼',
-    styleType: 'primary',
+    styleType: 'default',
     full: true
   }
 }
@@ -23,7 +23,7 @@ export const Default: Story = {
 export const WithFormItem: Story = {
   args: {
     children: '버튼',
-    styleType: 'primary',
+    styleType: 'default',
     full: true
   }
 }
