@@ -30,7 +30,7 @@ export const FormList: FC<PropsWithChildren<FormListProps<FieldValues>>> = ({nam
               <label className="font-bold text-[#334454]">Index {index + 1}</label>
               <Button
                 styleType="white"
-                className="border-[var(--hashtag)] p-1 text-[#e3364b]"
+                className="border-[var(--hashtag)] p-1 text-[var(--hashtag)]"
                 type="button"
                 onClick={() => remove(index)}
               >

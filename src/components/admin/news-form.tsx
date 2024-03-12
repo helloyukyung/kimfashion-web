@@ -53,6 +53,7 @@ const schema = z.object({
       {message: '최대 5개의 해시태그를 입력해주세요'}
     )
 })
+
 function NewsForm() {
   const form = useForm({mode: 'all', resolver: zodResolver(schema)})
 

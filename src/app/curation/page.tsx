@@ -1,3 +1,4 @@
+import {getCurationList} from '@/api/curations'
 import Hashtag from '@/components/common/hashtag'
 import Subtitle from '@/components/common/subtitle'
 import Image from 'next/image'
@@ -57,13 +58,15 @@ export const mockData = [
 ]
 
 export default async function Page() {
+  const curationList = await getCurationList()
+
   return (
     <main className="flex w-full max-w-[var(--max-layout-width)] flex-col justify-center px-[var(--side-padding)]">
       <h1 className="mb-[12px] font-fontPairDisplay text-[3.2rem] font-bold uppercase">CURATION</h1>
-      <Subtitle>넘쳐나는 컨텐츠 속에서 양질의 패션정보만 엄선한 추천 컨텐츠</Subtitle>
+      <Subtitle>양질의 패션정보만 엄선한 큐레이션</Subtitle>
       <div className="grid gap-[10px] tablet:grid-cols-2">
-        {mockData.map((curation, index) => (
-          <Link href="/curation/id" className="flex flex-col" key={index}>
+        {curationList.map((curation, index) => (
+          <Link href={`/curation/${curation.id}`} className="flex flex-col" key={index}>
             <div className="relative overflow-hidden pb-[200px]">
               <Image
                 className="absolute h-[200px] w-full rounded object-cover"

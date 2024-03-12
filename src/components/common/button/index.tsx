@@ -15,7 +15,7 @@ const Button = ({
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <button
-      className={`${full ? 'w-full' : ''} rounded p-6  ${styleType === 'default' ? 'bg-[black] text-[white] ' : 'border bg-[white] text-[black]'} ${className}`}
+      className={`${full ? 'w-full' : ''} rounded p-6  ${styleType === 'default' ? 'bg-[black] text-[white]' : 'border bg-[white] text-[black]'} ${className}`}
       type={type}
       {...rest}
     >
