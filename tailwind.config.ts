@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      fontPairDisplay: ['var(--font-pair-display)'] // 다음과 같이 배열 안에 string으로 작성합니다.
+      pd: ['var(--font-pair-display)']
     },
     screens: {
       tablet: '640px',

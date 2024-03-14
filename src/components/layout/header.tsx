@@ -18,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
+    <div className="bg-black text-white fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
       <button
         onClick={handleClickMenuOpen}
         className="absolute left-[10px] top-[9px] hover:text-[var(--hashtag)] laptop:hidden"
@@ -32,15 +32,15 @@ const Header = () => {
         onClick={handleCloseMenu}
         className={`${
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
-        } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
+        } w-full bg-black laptop:pl-0 fixed top-[50px] flex-col items-start pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:opacity-100`}
       >
-        <Link href="/news" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
+        <Link href="/news" className="w-full block py-[8px] hover:text-[var(--hashtag)]">
           NEWS
         </Link>
-        <Link href="/curation" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
+        <Link href="/curation" className="w-full block py-[8px] hover:text-[var(--hashtag)]">
           CURATION
         </Link>
-        <Link href="/look-info" className="block w-full py-[8px] hover:text-[var(--hashtag)]">
+        <Link href="/look-info" className="w-full block py-[8px] hover:text-[var(--hashtag)]">
           LOOK INFO
         </Link>
       </div>

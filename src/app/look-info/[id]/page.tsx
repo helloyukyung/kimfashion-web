@@ -7,8 +7,8 @@ import Image from 'next/image'
 export default async function Page({params}: {params: {id: string}}) {
   const lookInfo = await getLookInfo(params.id)
   return (
-    <main className="mx-auto w-full max-w-[720px] p-[10px]">
-      <h1 className="mb-[12px] text-[3.2rem] font-bold uppercase">제니의 공항 사진 정보</h1>
+    <main className="w-full mx-auto max-w-[720px] p-[10px]">
+      <h1 className="mb-[12px] text-[3.2rem] font-bold uppercase">{lookInfo.title}</h1>
       <div className="relative">
         <Image className="h-[full] w-[full] rounded" width={800} height={800} src={lookInfo.image} alt="temp" />
         <InfoItems infos={lookInfo.infos} />

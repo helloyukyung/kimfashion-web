@@ -8,15 +8,15 @@ export default async function Page() {
   const curationList = await getCurationList()
 
   return (
-    <main className="flex w-full max-w-[var(--max-layout-width)] flex-col justify-center px-[var(--side-padding)]">
-      <h1 className="mb-[12px] font-fontPairDisplay text-[3.2rem] font-bold uppercase">CURATION</h1>
+    <main className="w-full flex max-w-[var(--max-layout-width)] flex-col justify-center px-[var(--side-padding)]">
+      <h1 className="font-pd mb-[12px] text-[3.2rem] font-bold uppercase">CURATION</h1>
       <Subtitle>양질의 패션정보만 엄선한 큐레이션</Subtitle>
       <div className="grid gap-[10px] tablet:grid-cols-2">
         {curationList.map((curation, index) => (
           <Link href={`/curation/${curation.id}`} className="flex flex-col" key={index}>
             <div className="relative overflow-hidden pb-[200px]">
               <Image
-                className="absolute h-[200px] w-full rounded object-cover"
+                className="w-full absolute h-[200px] rounded object-cover"
                 width={500}
                 height={500}
                 src={curation.representativeImage}

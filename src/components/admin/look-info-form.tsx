@@ -64,7 +64,7 @@ function LookInfoForm() {
 
   return (
     <>
-      <h1 className="mb-[12px] font-fontPairDisplay text-[2.8rem] font-bold">LookInfo</h1>
+      <h1 className="font-pd mb-[12px] text-[2.8rem] font-bold">LookInfo</h1>
       <Form form={form} onSubmit={handleSubmit}>
         <Form.Item label="제목" name="title">
           <Input />

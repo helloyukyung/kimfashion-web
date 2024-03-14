@@ -31,8 +31,8 @@ export default function Page() {
   }
 
   return (
-    <main className="flex w-full max-w-[450px] flex-col justify-center px-[var(--side-padding)]">
-      <h1 className="mb-16 font-fontPairDisplay text-[3.2rem] font-bold uppercase">로그인</h1>
+    <main className="w-full flex max-w-[450px] flex-col justify-center px-[var(--side-padding)]">
+      <h1 className="font-pd mb-16 text-[3.2rem] font-bold uppercase">로그인</h1>
       <Form form={form} onSubmit={handleSignIn} className="flex flex-col gap-4">
         <Form.Item label="아이디" name="email" registerOptions={{required: '이메일을 입력해주세요.'}}>
           <Input placeholder="아이디를 입력해주세요." />
