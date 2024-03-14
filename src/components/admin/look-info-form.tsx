@@ -56,7 +56,6 @@ function LookInfoForm() {
     const {image, hashtags, ...rest} = values
     const imageUrl: string = (await getImageUrl({fileList: image, imageType: 'look-info'})) || ''
 
-    console.log(imageUrl, hashtags, rest)
     const {error} = await postLookInfo({image: imageUrl, hashtags: extractHashtags(hashtags), ...rest})
     if (error) return toast.error(error.message)
     toast.success('성공적으로 글을 올렸습니다.')
