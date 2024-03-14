@@ -100,7 +100,6 @@ function CurationForm() {
         <Form.Item label="내용" name="content">
           <Input />
         </Form.Item>
-
         <Form.List
           name="products"
           label="추천 제품"
