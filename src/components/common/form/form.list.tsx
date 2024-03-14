@@ -25,12 +25,12 @@ export const FormList: FC<PropsWithChildren<FormListProps<FieldValues>>> = ({nam
       )}
       <div className="flex flex-col gap-2">
         {fields.map((field, index) => (
-          <div className="rounded-md bg-[#F8F9F9] p-3" key={field.id}>
+          <div className="p-3 rounded-md bg-[#F8F9F9]" key={field.id}>
             <div className="flex items-center justify-between">
               <label className="font-bold text-[#334454]">Index {index + 1}</label>
               <Button
                 styleType="white"
-                className="border-[var(--hashtag)] p-1 text-[var(--hashtag)]"
+                className="p-1 border-[var(--primary-01)] text-[var(--primary-01)]"
                 type="button"
                 onClick={() => remove(index)}
               >

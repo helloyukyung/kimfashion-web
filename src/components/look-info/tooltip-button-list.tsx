@@ -51,7 +51,7 @@ function InfoItems({infos}: InfoItemsProps) {
             onMouseLeave={() => handleMouseLeave(index)}
           >
             <Image
-              className="rounded border-[3px] border-solid border-[lightGray] hover:border-[var(--hashtag)]"
+              className="rounded border-[3px] border-solid border-[lightGray] hover:border-[var(--primary-01)]"
               src={data[index]?.ogImage}
               width={100}
               height={100}

@@ -24,7 +24,7 @@ export const FormItem: FC<PropsWithChildren<FormItemProps>> = ({
   const {error} = getFieldState(name)
 
   return (
-    <div className="flex flex-col gap-1 pb-4">
+    <div className="pb-4 flex flex-col gap-1">
       <div className="flex flex-col gap-2">
         {label && (
           <label className="text-[#334454]" htmlFor={name}>
@@ -44,7 +44,7 @@ export const FormItem: FC<PropsWithChildren<FormItemProps>> = ({
           <ErrorMessage
             errors={errors}
             name={name}
-            render={({message}) => <span className="text-[1.2rem] text-[var(--hashtag)]">{`${message}`}</span>}
+            render={({message}) => <span className="text-[1.2rem] text-[var(--primary-01)]">{`${message}`}</span>}
           />
         </p>
       )}
