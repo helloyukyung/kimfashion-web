@@ -1,4 +1,5 @@
 import CurationForm from '@/components/admin/curation-form'
+import LookInfoForm from '@/components/admin/look-info-form'
 import NewsForm from '@/components/admin/news-form'
 import Tab from '@/components/common/tab'
 
@@ -8,7 +9,7 @@ const tabs = [
     children: <NewsForm />
   },
   {title: 'Curation', children: <CurationForm />},
-  {title: 'LookInfo', children: <></>}
+  {title: 'LookInfo', children: <LookInfoForm />}
 ]
 
 export default function Page() {

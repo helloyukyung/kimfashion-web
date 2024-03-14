@@ -1,10 +1,14 @@
+import {LookInfo} from '@/api/look-info'
 import LookInfoItem from './look-info-item'
 
-function LookInfoList() {
+interface LookInfoListProps {
+  lookInfoList: LookInfo[]
+}
+function LookInfoList({lookInfoList}: LookInfoListProps) {
   return (
     <div className="grid grid-cols-3 gap-[6px]">
-      {['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''].map((item, index) => (
-        <LookInfoItem key={index} />
+      {lookInfoList.map((lookInfo, index) => (
+        <LookInfoItem key={index} lookInfo={lookInfo} />
       ))}
     </div>
   )
