@@ -10,6 +10,15 @@ const nextConfig = {
         hostname: '**'
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/news',
+        permanent: false
+      }
+    ]
   }
 }
 module.exports = nextConfig
