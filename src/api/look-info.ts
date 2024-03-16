@@ -5,6 +5,7 @@ export interface LookInfo {
   title: string
   name: string
   image: string
+  imageSource: string
   hashtags: string[]
   infos: {
     x: number
