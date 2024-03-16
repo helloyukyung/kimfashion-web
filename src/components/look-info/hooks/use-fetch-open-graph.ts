@@ -7,7 +7,7 @@ interface OpenGraphData {
 
 function useFetchOpenGraph(urls: string[] | null) {
   const [data, setData] = useState<OpenGraphData[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {

@@ -14,20 +14,23 @@ function InfoItems({infos}: InfoItemsProps) {
   const [hoverStates, setHoverStates] = useState(Array(infos.length).fill(false))
   const {data, loading, error} = useFetchOpenGraph(infos?.map((info) => info.url))
 
-  const handleMouseEnter = (index: number) => {
-    setHoverStates(hoverStates.map((state, i) => (i === index ? true : state)))
+  const handleMouseEnterLeave = (index: number, isEnter: boolean) => {
+    setHoverStates(hoverStates.map((_, i) => (i === index ? isEnter : hoverStates[i])))
   }
-
-  const handleMouseLeave = (index: number) => {
-    setHoverStates(hoverStates.map((state, i) => (i === index ? false : state)))
-  }
-
   const handleClickPurchase = (url: string) => {
     window.open(url, '_blank')
   }
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>로딩 실패</div>
+  if (loading)
+    return (
+      <div role="status" className="absolute flex w-full animate-pulse gap-5 overflow-x-auto py-9">
+        {Array.from({length: 3}, (_, i) => (
+          <div key={i} className="min-h-[100px] min-w-[100px] rounded bg-gray-300" />
+        ))}
+      </div>
+    )
+
+  if (error) return <div>제품 정보를 불러오는데 실패했어요🥲</div>
 
   return (
     <>
@@ -38,21 +41,23 @@ function InfoItems({infos}: InfoItemsProps) {
           y={info.y}
           url={info.url}
           title={data[index]?.ogTitle}
-          imageUrl={data[index]?.ogImage}
-          controlledHoverState={hoverStates[index]}
+          hoverState={hoverStates[index]}
+          image={data[index]?.ogImage}
+          handleMouseEnter={() => handleMouseEnterLeave(index, true)}
+          handleMouseLeave={() => handleMouseEnterLeave(index, false)}
         />
       ))}
-      <div className="flex w-full gap-5 overflow-x-auto p-5">
+      <div className="absolute flex w-full gap-5 overflow-x-auto py-9">
         {infos.map((info, index) => (
           <div
             className="min-h-[100px] min-w-[100px]"
             key={`${info.url}_${index}`}
             onClick={() => handleClickPurchase(info.url)}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
+            onMouseEnter={() => handleMouseEnterLeave(index, true)}
+            onMouseLeave={() => handleMouseEnterLeave(index, false)}
           >
             <Image
-              className="rounded border-[3px] border-solid border-[lightGray] hover:border-[var(--primary-01)]"
+              className={`h-[100px] w-[100px] rounded border-2 border-solid ${hoverStates[index] ? 'border-[var(--primary-01)]' : ' border-gray-300'}`}
               src={data[index]?.ogImage}
               width={100}
               height={100}
