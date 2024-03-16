@@ -5,6 +5,10 @@ import {useState} from 'react'
 import {CiInstagram, CiMail} from 'react-icons/ci'
 import {MdClose, MdOutlineMenu} from 'react-icons/md'
 import Logo from '../common/logo'
+import NavLink from './nav-link'
+
+const EMAIL = 'official.kimfashion@gmail.com'
+const INSTAGRAM_URL = 'https://www.instagram.com/kimfashion_news'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -34,21 +38,14 @@ const Header = () => {
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
         } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
       >
-        <Link href="/news" className="block w-full py-[8px] hover:text-[var(--primary-01)]">
-          NEWS
-        </Link>
-        {/* <Link href="/curation" className="block w-full py-[8px] hover:text-[var(--primary-01)]">
-          CURATION
-        </Link> */}
-        {/* <Link href="/look-info" className="block w-full py-[8px] hover:text-[var(--primary-01)]">
-          LOOK INFO
-        </Link> */}
+        <NavLink href="/news">NEWS</NavLink>
+        <NavLink href="/look-info">LOOK INFO</NavLink>
       </div>
       <address className="hidden gap-[10px] text-[1.2rem] laptop:flex">
-        <a href="mailto:official.kimfashion@gmail.com" className="hover:text-[var(--primary-01)]">
+        <a href={EMAIL} className="hover:text-[var(--primary-01)]">
           <CiMail size="24px" />
         </a>
-        <a target="_blank" href="https://www.instagram.com/kimfashion_news" className="hover:text-[var(--primary-01)]">
+        <a target="_blank" href={INSTAGRAM_URL} className="hover:text-[var(--primary-01)]">
           <CiInstagram size="24px" />
         </a>
       </address>
