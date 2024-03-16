@@ -10,7 +10,7 @@ export interface News {
 }
 
 export const getNewsList = async () => {
-  const {data, error} = await supabase.from('news').select('*').limit(10).range(0, 100)
+  const {data, error} = await supabase.from('news').select('*').range(0, 10)
 
   if (error) {
     throw error

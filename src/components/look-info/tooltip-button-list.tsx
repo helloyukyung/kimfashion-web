@@ -12,7 +12,7 @@ interface InfoItemsProps {
 
 function InfoItems({infos}: InfoItemsProps) {
   const [hoverStates, setHoverStates] = useState(Array(infos.length).fill(false))
-  const {data, loading} = useFetchOpenGraph(infos?.map((info) => info.url))
+  const {data, loading, error} = useFetchOpenGraph(infos?.map((info) => info.url))
 
   const handleMouseEnter = (index: number) => {
     setHoverStates(hoverStates.map((state, i) => (i === index ? true : state)))
@@ -27,6 +27,7 @@ function InfoItems({infos}: InfoItemsProps) {
   }
 
   if (loading) return <div>Loading...</div>
+  if (error) return <div>로딩 실패</div>
 
   return (
     <>
@@ -41,7 +42,7 @@ function InfoItems({infos}: InfoItemsProps) {
           controlledHoverState={hoverStates[index]}
         />
       ))}
-      <div className="w-full p-5 flex gap-5 overflow-x-auto">
+      <div className="flex w-full gap-5 overflow-x-auto p-5">
         {infos.map((info, index) => (
           <div
             className="min-h-[100px] min-w-[100px]"
