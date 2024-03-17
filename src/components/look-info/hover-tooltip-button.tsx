@@ -39,7 +39,7 @@ const HoverTooltipButton = ({
     >
       <button
         type="button"
-        className="opacity- flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary-01)] opacity-85"
+        className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary-01)] opacity-85"
       >
         <FaPlus className="text-white" />
       </button>
