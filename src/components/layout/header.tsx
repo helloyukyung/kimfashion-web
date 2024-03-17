@@ -7,7 +7,7 @@ import {MdClose, MdOutlineMenu} from 'react-icons/md'
 import Logo from '../common/logo'
 import NavLink from './nav-link'
 
-const EMAIL = 'official.kimfashion@gmail.com'
+const EMAIL = 'mailto:official.kimfashion@gmail.com'
 const INSTAGRAM_URL = 'https://www.instagram.com/kimfashion_news'
 
 const Header = () => {
