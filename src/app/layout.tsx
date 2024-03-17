@@ -5,6 +5,7 @@ import '@/styles/reset.css'
 import type {Metadata} from 'next'
 import {Playfair_Display} from 'next/font/google'
 import Head from 'next/head'
+import Script from 'next/script'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 export const metadata: Metadata = {
@@ -30,7 +31,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
-        <script async defer src="https://www.instagram.com/embed.js" />
       </Head>
       <body className={`${pairiDisplay.variable}`}>
         <div className="flex w-full flex-col">
@@ -39,6 +39,19 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Footer />
           <ToastContainer theme="colored" position="top-center" autoClose={3000} />
         </div>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MWEF9CKQCQ" strategy="afterInteractive" />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-MWEF9CKQCQ');
+            `
+          }}
+        />
       </body>
     </html>
   )
