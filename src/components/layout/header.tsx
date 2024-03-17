@@ -25,12 +25,12 @@ const Header = () => {
     <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
       <button
         onClick={handleClickMenuOpen}
-        className="absolute left-[10px] top-[9px] hover:text-[var(--primary-01)] laptop:hidden"
+        className="hover-animation absolute left-[10px] top-[9px] hover:text-[var(--primary-01)] laptop:hidden "
       >
         {isMenuOpen ? <MdClose size="30px" /> : <MdOutlineMenu size="30px" />}
       </button>
       <Link href="/" onClick={handleCloseMenu} className="w-[60px] laptop:my-[40px] laptop:w-[140px]">
-        <Logo width={150} height={150} />
+        <Logo className="laptop:text-[3.2rem]" />
       </Link>
       <div
         onClick={handleCloseMenu}
@@ -41,11 +41,11 @@ const Header = () => {
         <NavLink href="/news">NEWS</NavLink>
         <NavLink href="/look-info">LOOK INFO</NavLink>
       </div>
-      <address className="hidden gap-[10px] text-[1.2rem] laptop:flex">
-        <a href={EMAIL} className="hover:text-[var(--primary-01)]">
+      <address className="hidden gap-[10px] text-[1.2rem] laptop:flex ">
+        <a href={EMAIL} className="hover-animation hover:text-[var(--primary-01)]">
           <CiMail size="24px" />
         </a>
-        <a target="_blank" href={INSTAGRAM_URL} className="hover:text-[var(--primary-01)]">
+        <a target="_blank" href={INSTAGRAM_URL} className="hover-animation hover:text-[var(--primary-01)]">
           <CiInstagram size="24px" />
         </a>
       </address>
