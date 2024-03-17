@@ -2,10 +2,8 @@
 import Link from 'next/link'
 import {usePathname, useSearchParams} from 'next/navigation'
 
-import {ReactNode} from 'react'
-
 interface TabProps {
-  tabs: {title: string; children: ReactNode}[]
+  tabs: {title: string; children: React.ReactNode}[]
 }
 
 function Tab({tabs}: TabProps) {

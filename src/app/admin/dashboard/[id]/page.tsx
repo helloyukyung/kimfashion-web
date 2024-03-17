@@ -5,11 +5,11 @@ import Tab from '@/components/common/tab'
 
 const tabs = [
   {
-    title: 'News',
+    title: 'news',
     children: <NewsForm />
   },
-  {title: 'Curation', children: <CurationForm />},
-  {title: 'LookInfo', children: <LookInfoForm />}
+  {title: 'curation', children: <CurationForm />},
+  {title: 'look-info', children: <LookInfoForm />}
 ]
 
 export default function Page() {
