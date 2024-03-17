@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {ChangeEvent, forwardRef, useState} from 'react'
+import {useFormContext} from 'react-hook-form'
 import {InputProps} from '../input'
 type ImageType = 'news' | 'curation' | 'look-info'
 interface FileInputProps extends InputProps {
@@ -7,23 +8,24 @@ interface FileInputProps extends InputProps {
 }
 
 function FileInput({imageType, ...props}: FileInputProps, ref: any) {
+  const {getValues} = useFormContext()
   const {onChange, ...rest} = props
-  const [tempFileUrl, setTempFileUrl] = useState<string[]>([])
+  const defaultValue = props?.name && getValues(props?.name)
+  const [tempFileUrl, setTempFileUrl] = useState<string>()
 
   const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return
-    const fileArray = Array.prototype.slice.call(e.target.files)
-    const fileUrls = fileArray.map((file: File) => URL.createObjectURL(file))
-    setTempFileUrl(fileUrls)
+    const file = e.target.files[0]
+    setTempFileUrl(URL.createObjectURL(file))
   }
 
   return (
     <>
       <input type="file" onChange={handleChange} className="w-full rounded border p-5" ref={ref} {...rest} />
-      <div>
-        {tempFileUrl.length > 0 &&
-          tempFileUrl.map((url) => <Image key={url} width={100} height={100} src={url} alt="tempFile" />)}
-      </div>
+      {typeof defaultValue === 'string' && (
+        <Image priority width={100} height={100} src={defaultValue} alt="tempFile" />
+      )}
+      <div>{tempFileUrl && <Image priority width={100} height={100} src={tempFileUrl} alt="tempFile" />}</div>
     </>
   )
 }
