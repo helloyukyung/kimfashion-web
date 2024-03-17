@@ -22,10 +22,10 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-h-[50px] min-w-full flex-col items-center justify-center bg-black text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:px-[12px] laptop:py-[20px]">
+    <div className="fixed z-[var(--z-header)] flex max-h-[100dvh] min-w-full flex-row items-center justify-between bg-black px-8 py-4 text-white laptop:min-h-[100dvh] laptop:min-w-[220px] laptop:flex-col laptop:justify-center laptop:px-[12px] laptop:py-[20px]">
       <button
         onClick={handleClickMenuOpen}
-        className="hover-animation absolute left-[10px] top-[9px] hover:text-[var(--primary-01)] laptop:hidden "
+        className="hover-animation left-[10px] top-[9px] hover:text-[var(--primary-01)] laptop:absolute laptop:hidden"
       >
         {isMenuOpen ? <MdClose size="30px" /> : <MdOutlineMenu size="30px" />}
       </button>
@@ -36,12 +36,12 @@ const Header = () => {
         onClick={handleCloseMenu}
         className={`${
           isMenuOpen ? 'visible translate-x-0 opacity-100 duration-500' : 'invisible -translate-x-full opacity-0'
-        } fixed top-[50px] w-full flex-col items-start bg-black pb-[10px] pl-[20px] transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
+        } fixed left-0 top-[50px] w-full flex-col items-start bg-black pb-5 pl-16 transition-all laptop:visible laptop:static laptop:flex laptop:max-w-[140px] laptop:flex-1 laptop:translate-x-0 laptop:pl-0 laptop:opacity-100`}
       >
         <NavLink href="/news">NEWS</NavLink>
         <NavLink href="/look-info">LOOK INFO</NavLink>
       </div>
-      <address className="hidden gap-[10px] text-[1.2rem] laptop:flex ">
+      <address className="flex gap-[10px] text-[1.2rem]">
         <a href={EMAIL} className="hover-animation hover:text-[var(--primary-01)]">
           <CiMail size="24px" />
         </a>
