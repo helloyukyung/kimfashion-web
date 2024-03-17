@@ -35,7 +35,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={`${pairiDisplay.variable}`}>
         <div className="flex w-full flex-col">
           <Header />
-          <div className="flex flex-col items-center pt-[80px] laptop:ml-[220px]">{children}</div>
+          <div className="flex flex-col items-center pt-[60px] laptop:ml-[220px]">{children}</div>
           <Footer />
           <ToastContainer theme="colored" position="top-center" autoClose={3000} />
         </div>
