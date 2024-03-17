@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.hover-animation {
+  @apply transition-transform duration-200 ease-in-out hover:scale-105; 
+}
+
 :root {
   /* width */
   --max-layout-width: 800px;

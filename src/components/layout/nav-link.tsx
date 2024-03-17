@@ -14,7 +14,7 @@ const NavLink = ({href, children}: NavLinkProps) => {
   return (
     <Link
       href={href}
-      className={`block w-full py-[8px] ${isActive ? 'text-[var(--primary-01)]' : 'hover:text-[var(--primary-01)]'}`}
+      className={`hover-animation block w-full py-[8px] ${isActive ? 'text-[var(--primary-01)]' : 'hover:text-[var(--primary-01)]'}`}
     >
       {children}
     </Link>
