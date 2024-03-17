@@ -15,7 +15,7 @@ function NewsItem({news}: NewsItemProps) {
           className="h-[32px] w-[32px] rounded-[100px]"
           width={32}
           height={32}
-          src="/assets/kimfashion_logo.svg"
+          src="/assets/kimfashion_logo.png"
           alt="logo"
         />
         <div>
