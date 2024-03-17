@@ -4,7 +4,7 @@ import Hashtag from '@/components/common/hashtag'
 import WriterInfo from '@/components/common/writer-info'
 
 export default async function Page({params}: {params: {id: string}}) {
-  const data = await getNews(params.id)
+  const data = await getNews(Number(params.id))
 
   if (!data) return null
   return (
