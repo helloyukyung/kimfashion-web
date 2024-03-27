@@ -25,6 +25,7 @@ function NewsItem({news}: NewsItemProps) {
         </div>
       </div>
       <Image
+        priority
         className="max-h-[585px] w-full overflow-hidden rounded object-cover"
         width={480}
         height={480}

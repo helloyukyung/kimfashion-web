@@ -13,6 +13,7 @@ function LookInfoItem({lookInfo}: LookInfoItemProps) {
     >
       <div className="relative w-full overflow-hidden pb-[120%] laptop:min-w-[200px]">
         <Image
+          priority
           className="absolute left-0 top-0 h-full w-full rounded object-cover"
           width={280}
           height={280}
